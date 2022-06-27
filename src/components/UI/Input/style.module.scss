@@ -1,0 +1,49 @@
+.inputWrapper {
+  width: 100%;
+  flex-basis: calc(100% / 3);
+  position: relative;
+  
+  .formInput {
+    width: 100%;
+    background: transparent;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-bottom: 1px #fff solid;
+    color: #fff;
+    opacity: .7;
+    padding: 0 0 10px 2px;
+    resize: none;
+    font-family: 'Proxima Nova', sans-serif;
+    transition: .3s all;
+    &:focus {
+      opacity: 1;
+    }
+    &::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+    }
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    &::placeholder {
+      text-transform: capitalize;
+    }
+  }
+  .error {
+    color: red;
+    border-bottom-color: red;
+    &::placeholder {
+      color: red;
+    }
+  }
+  
+  .errorText {
+    color: red;
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+  }
+}
+
+

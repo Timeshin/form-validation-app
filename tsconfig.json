@@ -1,16 +1,27 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "outDir": "dist/",
+    "baseUrl": "./src/",
+    "paths": {
+      "components": ["components"],
+      "services": ["services"],
+      "reducer": ["reducer"],
+      "helpers": ["helpers"],
+      "interfaces/*": ["interfaces/*"],
+    },
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
     "allowJs": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
@@ -18,9 +29,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin"
+      }
+    ],
   },
-  "include": [
-    "src"
-  ]
+  "include": [ "./src/**/*" ],
+  "exclude": ["node_modules/*", "public/*"]
 }
