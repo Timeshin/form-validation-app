@@ -11,18 +11,14 @@ const Input = ({
   const { value, isValid, validationCB, actionType } = item
 
   const onChangeHandler = ({ target: { value } }: ChangeEvent<HTMLInputElement>) => {
-    if(!isValid) {
-      dispatch({ type: actionType, payload: { ...item, value: value, isValid: validationCB(value) }})
-      return
-    }
-
-    dispatch({ type: actionType, payload: { ...item, value: value } })
+    dispatch({ type: actionType, payload: { ...item, value: value, isValid: validationCB(value) }})
   }
 
   const onBlurHandler = ({ target: { value } }: FocusEvent<HTMLInputElement>) => {
     if(value.trim().length < 0) {
       dispatch({ type: actionType, payload: { ...item, isValid: false } })
     }
+    
     if(validationCB(value)) return
 
     dispatch({ type: actionType, payload: { ...item, isValid: false } })

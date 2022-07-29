@@ -95,7 +95,7 @@ const App = () => {
           <div className={`status-messsage ${status === 'error' ? 'error-message' : 'success-message'}`}>
             <p>
               {
-                status === 'error' && 'Someting went wrong :('
+                status === 'error' && 'Something went wrong :('
               }
               {
                 status === 'done' && 'Success'

@@ -5,3 +5,9 @@ export interface ISendFormReq {
   dateOfBirth: string
   message: string
 }
+
+type responseDataType = ISendFormReq & { id: number }
+
+export interface ISendFormResp extends Response {
+  data: responseDataType
+}
